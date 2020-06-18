@@ -1,0 +1,27 @@
+.container{
+    margin:0 auto;
+    width:100%;
+     display:flex;
+     
+   }
+   .settings-panel{
+     border:5px solid blue;
+     padding:1px;
+     width:28%;
+     min-height:600px;
+   }
+   .canvas{
+     border:5px solid red;
+     width:70%;
+     min-height:600px;
+     
+   }
+   .shapes{
+     display:flex;
+   }
+   .shape{
+     /*background-color:transparent;
+     border:transparent;
+     */
+     width:100%;
+   }
