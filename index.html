@@ -16,16 +16,34 @@
 
     <div class="container">
         <div class="settings-panel">
-          <div class="shapes">
+          <div class="canvas-area">
+            <fieldset> 
+            <legend>Canvas width and heigt:</legend> 
+            <input type="text" class="size-width" id='canvas-area-width'>
+            <label for="width">width</label>
+            <input type="text" class="size-height" id='canvas-area-size-height'>
+            <label class="size-height">height</labeel>
+            </fieldset>
+            </div>
+          <div class="shapes" id='shapes'>
             <button class="shape circle" id='circle'>circle</button>
             <button class="shape square" id ='square'>square</button>
             <button class="shape rectangle" id ='rectangle'>rectangle</button>
             <button class="shape triangle" id ='triangle'>triangle</button>
           </div>
+          <div class="sizes">
+            <input type="number" minlength='1' class="size-width" id='size-width'>
+            <label for="width">width</label>
+            <input type="number" minlength='1' class="size-height" id='size-height'>
+            <label class="size-height">height</labeel>
+          </div>
+          <div class="colors">
+            <input name='color-picker' type='color' value="#e66465">
+            <input name='color-picker' type='color' value="#f6b73c">
+          </div>
         </div>
-        <div class="canvas"></div>
+        <canvas class="canvas" id="canvas" ></canvas>
       </div>
-
 
 
 
