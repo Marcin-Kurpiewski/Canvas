@@ -17,13 +17,23 @@
     <div class="container">
         <div class="settings-panel">
           <div class="canvas-area">
+            <button id='create'>CreteNew</button>
             <fieldset> 
             <legend>Canvas width and heigt:</legend> 
             <input type="text" class="size-width" id='canvas-area-width'>
-            <label for="width">width</label>
+            <label for="canvas-area-width">width</label>
             <input type="text" class="size-height" id='canvas-area-size-height'>
-            <label class="size-height">height</labeel>
+            <label for='canvas-area-size-height' class="size-height" >height</labeel>
             </fieldset>
+            </div>
+            <div class="shapes-list">
+              <label for="">Shape Name</label>
+              <input type="text"  id='shape-name'>
+              <div class="shapes-list-container">
+                <ul class="shape-list">
+                  <li class='shape-item' > id, name, btn-remove,btn-edit</li>
+                </ul>
+              </div>   
             </div>
           <div class="shapes" id='shapes'>
             <button class="shape circle" id='circle'>circle</button>
@@ -33,9 +43,9 @@
           </div>
           <div class="sizes">
             <input type="number" minlength='1' class="size-width" id='size-width'>
-            <label for="width">width</label>
+            <label for="size-width">width</label>
             <input type="number" minlength='1' class="size-height" id='size-height'>
-            <label class="size-height">height</labeel>
+            <label class="size-height" for='size-height'>height</labeel>
           </div>
           <div class="colors">
             <input name='color-picker' type='color' value="#e66465">
