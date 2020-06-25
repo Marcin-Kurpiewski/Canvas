@@ -1,84 +1,39 @@
-const can = document.querySelectorAll('.canvas');
+import {testY} from "./ui-class.js";
 
-/*
-const shape = {
-    width:'',
-    height:'',
-    lineWidth:'',
-    shape:[],
 
-}
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
-*/
-/*
-function getShape(event){
-this.id = event.target.id
- var typeShape=id;
- if(typeShape=='circle')
- if(typeShape=='square')
- if(typeShape=='rectangle')
- if(typeShape=='triangle')
 
-      console.info('Shape id = ' + typeShape );
-  return typeShape;
-}
-
-var typeShapeBtn = document.getElementById('shapes');
-typeShapeBtn.addEventListener('click', drawShape);
-function drawShape(){
-    var type=getShape(event);
-    var size=getSize();
-    
-    var ca = document.getElementById('canvas');
-    var ctx = ca.getContext("2d");
-    ctx.beginPath();
-    ctx.rect(20, 20,  size.height, size.width);
-    ctx.stroke();
-    console.log('width, height, type ' +  type +' '+ size.height +' '+ size.width );
-}
-//addEventListener('click',getSize);
-
-*/
 
 class Shape{
 
-    constructor(name,width,height,typeShape, bgColor, lineColor){
-    let id=this.generateId();
-    if(this.name==undefined){
+    constructor(name){
         this.name=this.getName()
-    }
-    if(this.height==undefined || this.height==''){
-        this.height=this.getSize();    
-    }
-    if(this.width==undefined || this.width==''){
-        this.width= this.getSize();
-    }
+    
+    
+    this.sizes=this.getSize(),
+    //this.shapeType=this.getShape(),
+   // this.line=this.getLine(),
+    //this.shapeBg=this.getBackground(),
+    //this.position=this.getPosition(),
+    //this.edit=true;
+    this.drop=false;
 
-   /* this.typeShape=this.getTypeShape();
-    this.bgColor=this.getBgColor();
-    this.lineColor=this.getLineColor();
-    */
-  // document.getElementById('test').addEventListener('click', this.getName);
-   document.getElementById('shape-name').addEventListener('input', this.getName);
-   document.getElementById('size-width').addEventListener('input', this.getSize);
-   document.getElementById('size-height').addEventListener('input', this.getSize);
-   document.getElementById('circle').addEventListener('click', this.getShapeType);
+
+  
+    document.getElementById('shape-name').addEventListener('input', this.getName);
+    document.getElementById('size-width').addEventListener('input', this.getSize);
+    document.getElementById('size-height').addEventListener('input', this.getSize);
+    document.getElementById('shapes').addEventListener('click', this.drawShape);
    
-   
-   const shapeNew = {
-        name:this.getName(),
-        sizes:this.getSize()
-    };
-    console.log(JSON.stringify(shapeNew));
-   return shapeNew;
+    
 }
-generateId(){
-    //toDo
-}
+
 getName(){
     const name = document.getElementById('shape-name').value;
     console.log(name);
-    //to do check name if exist show information //also addin numeric number
+    //to do check name if exist, show information //also addin numeric number
     return name;
 }
 getSize(){
@@ -103,30 +58,113 @@ console.info(JSON.stringify(sizes));
     return sizes;
 
 }
-getShapeType(event){
-    console.log('clik');
-    this.id = event.target.id
-    const typeShape=id;
-    
-   
-         console.info('Shape id = ' + typeShape );
-     return typeShape;
-   }
-
+getShape(){
+  const shape = document.querySelector('.shapes');
+  
+  
+    console.log(shape);
+}
+getLine(){
+    console.log('getLine');
+}
+getBackground()
+{
+    console.log('get b-g')
+}
+getPosition()
+{
+    console.log('getPosition');
+}
 
 
 
 
 }
+
+class UI {
+    static displayShapes(){
+        
+    }
+    static addShapeToList(shape){
+
+    }
+    static editShape(shape){
+
+    }
+    static removeShape(shape){
+
+    }
+    static lockShape(shape){
+
+    }
+    static unlock(shape){
+
+    }
+    static clearFileds(){
+
+    }
+    static showMessage(msg, action){
+        //missing something 
+    }
+
+}
+
+
+
+
+
+
+   
 
 // Testing ---> 
 
 document.getElementById('create').addEventListener('click', createNewObject);
+document.getElementById('shapes').addEventListener('click', getShapeType);
 
-
+/*document.getElementById('shapes').addEventListener('click', function(){
+        
+})
+*/
 // shape max size == canvas size
 
-function createNewObject(){
+function createNewObject(shapeType){
+    console.log(event.target.id);
     const newShape = new Shape();
+    if(shapeType=='square'){
+        const ca = document.getElementById('canvas');
+        const ctx = ca.getContext("2d");
+        ctx.beginPath();
+        ctx.rect(20, 10,  this.getSize.sizes.width, this.getSize.sizes.height);
+        ctx.stroke();
+    }
+    
+      
+       
+    
     return newShape;
 }
+
+function getShapeType(event){
+    const typeShape= event.target.id
+    console.info('Shape id = ' + typeShape );
+ if(typeShape=='circle'){
+    console.info('Shape id = ' + typeShape );
+ }
+ if(typeShape=='square'){
+     
+    createNewObject('square');
+    console.info('Shape id = ' + typeShape );
+ }
+ if(typeShape=='rectangle'){
+    console.info('Shape id = ' + typeShape );
+ }
+ if(typeShape=='triangle'){
+    console.info('Shape id = ' + typeShape );
+ }
+         
+     return typeShape;
+   }
+
+   
+
+const abc = new Shape('ABC');
